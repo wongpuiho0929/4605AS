@@ -24,7 +24,7 @@ public class Main extends Thread {
 			}else if(temp.equals("s")){
 				Command a = new ShowMember(memberList);
 			}else if(temp.equals("s")){
-				System.out.print("ss");
+				System.out.print("HI Tommy");
 				
 			}
 			
