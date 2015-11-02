@@ -7,10 +7,8 @@ import AJCS.Member;
 
 public class CreateMember implements Command{
 
-		private Vector<Member> memberList;
-	
-		
-		
+	private Vector<Member> memberList;
+
 	public CreateMember(Vector<Member> memberList) {
 			this.memberList = memberList;
 		}
