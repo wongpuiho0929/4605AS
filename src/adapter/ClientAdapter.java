@@ -7,7 +7,7 @@ import WLTS.Client;
 public class ClientAdapter extends Xmember{
 
 	private Client client;
-	private SimpleDateFormat date = new SimpleDateFormat();
+	private SimpleDateFormat date = new SimpleDateFormat("dd-mm-yyyy");
 	
 	
 	public ClientAdapter(Client client) {
@@ -43,6 +43,6 @@ public class ClientAdapter extends Xmember{
 	public void setAddress(String address) {
 		client.setHomeAddress(address);
 		
-	}
+	}e
 
 }

@@ -6,7 +6,7 @@ import AJCS.Member;
 
 public class MemberAdapter extends Xmember{
 	private Member member;
-	private SimpleDateFormat date = new SimpleDateFormat("yyyy/MM/dd");
+	private SimpleDateFormat date = new SimpleDateFormat("dd-mm-yyyy");
 	
 	public MemberAdapter(Member member) {
 		this.member = member;
@@ -41,6 +41,6 @@ public class MemberAdapter extends Xmember{
 	public void setAddress(String address) {
 		member.setPostal(address);
 		
-	}
+	}e
 
 }

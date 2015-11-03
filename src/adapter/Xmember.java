@@ -1,9 +1,13 @@
 package adapter;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
 public abstract class Xmember {
 	
 	private String id,type,name,address,expireDate;
-
+	
+	
 	public abstract String getid();
 	public abstract String getType();
 	public abstract String getName();
@@ -13,14 +17,12 @@ public abstract class Xmember {
 	@Override
 	public String toString() {
 		return "Member information\n"
-				+ "ID: " + getid() + "\n"
-						+ "Type: " + getType() + "\n"
-								+ "Name: " + getName() + "\n"
-										+ "Address: " + getAddress() + "\n"
-												+ "Expire date(DD-MM-YYYY): " + getExpireDate();
+				+ "Expire Date  ID			  Type		Name		Address 				\n" 
+				+getExpireDate()+"  "+getid()+"			  "+getType()+"		"+getName()+"		"+getAddress();
+		
 	}
 	
-	public abstract void setAddress(String address);
+	public abstract void setAddress(String address);e
 	
 	
 
