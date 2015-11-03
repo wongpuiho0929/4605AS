@@ -21,11 +21,12 @@ public class Main{
 			String temp = kb.next();
 			
 			if (temp.equals("c")) {
-				System.out.println("Which Company(AJCS/WLTS)");
+				System.out.println("Enter Company Code (AJCS/WLTS):");
 				temp = kb.next();
 				if(temp.equals("AJCS")){
 					Command a = new CreateMember(memberList);
-					a.execute();}
+					a.execute();
+				}
 				else if(temp.equals("WLTS")){
 					Command a = new CreateClient(memberList);
 					a.execute();

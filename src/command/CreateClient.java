@@ -22,6 +22,7 @@ public class CreateClient implements Command {
 
 	@Override
 	public void execute() {
+		System.out.println("Enter id;type;name;address:");
 		Client [] client = {new VIP(),new VIP_Family()};
 		ClientCare m1 = new ClientCare(client);
 		Client a = m1.createClient();

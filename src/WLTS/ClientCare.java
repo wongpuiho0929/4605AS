@@ -16,7 +16,7 @@ public class ClientCare {
 	public Client createClient(){
 		String[] typeMember ={"VIP","VIPF"};
 		Scanner kb = new Scanner(System.in);
-		String statement =kb.next();
+		String statement =kb.nextLine();
 		String [] eachStatement=statement.split(";");
 		int typeMemberIndex = 0;
 		for(int i=0;i<typeMember.length;i++){

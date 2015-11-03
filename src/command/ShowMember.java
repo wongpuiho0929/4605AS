@@ -27,8 +27,6 @@ public class ShowMember implements Command{
 				}
 			System.out.print(member.toString()+"\n");
 			
-		}
-		
-	}
-	
+		}		
+	}	
 }

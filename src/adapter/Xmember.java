@@ -12,11 +12,13 @@ public abstract class Xmember {
 	
 	@Override
 	public String toString() {
-		return "Xmember [id=" + getid() + ", type=" + getType() + ", name=" + getName() + ", address=" + getAddress() + ", expireDate="
-				+ getExpireDate() + "]";
+		return "Member information\n"
+				+ "ID: " + getid() + "\n"
+						+ "Type: " + getType() + "\n"
+								+ "Name: " + getName() + "\n"
+										+ "Address: " + getAddress() + "\n"
+												+ "Expire date(DD-MM-YYYY): " + getExpireDate();
 	}
-	
-	
 
 
 }
