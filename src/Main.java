@@ -5,43 +5,45 @@ import java.util.Vector;
 import command.*;
 
 import AJCS.*;
+import Factory.*;
 
 public class Main{
 
 	public static void main(String[] arg) throws Exception {
 		
 		ArrayList memberList = new ArrayList(); 
-		
+		String [] factory ={"CreateFactory","ShowMemberFactory",
+				"UpdateAddressFactory","ExtendMembershipFactory"};
+		Factory [] facts = new Factory[factory.length]; 
+		String [] CommandIndex = {"c","s","a","e","u","l"};
+		try{
+			for(int i=0;i<facts.length;i++){
+				facts[i] = (Factory) Class.forName("Factory."+factory[i]).newInstance();
+				facts[i].setMemberList(memberList);
+			}
+		}catch(Exception e){
+			System.out.println(e.getStackTrace());
+		}
 		while (true) {
 			System.out
 					.println("\nX Mem Management System\nPlease Enter Command [c|s|a|e|u|r|l|X]\n"
-							+ "c = create membership, s = show membership details, a = update address, e = extend membership, u\n"
-							+ "= undo, r = redo, l = list undo/redo,	X = eXit system");
+							+ "c = create membership, s = show membership details, a = update address, e = extend membership, \n"
+							+ "u = undo, r = redo, l = list undo/redo,	X = eXit system");
+			
 			Scanner kb = new Scanner(System.in);
 			String temp = kb.next();
-			
-			if (temp.equals("c")) {
-				System.out.println("Enter Company Code (AJCS/WLTS):");
-				temp = kb.next();
-				if(temp.equals("AJCS")){
-					Command a = new CreateMember(memberList);
-					a.execute();
-				}
-				else if(temp.equals("WLTS")){
-					Command a  = new CreateClient(memberList);
-					a.execute();
+			int index=-1;
+			for(int i=0;i<CommandIndex.length;i++){
+				if(temp.equals(CommandIndex[i])){
+					index = i;
 				}
 				
-			}else if(temp.equals("s")){
-				Command a = new ShowMember(memberList);
+			}
+			if(temp.equals("X")){
+				System.exit(0);
+			}else{
+				Command a = facts[index].Create();
 				a.execute();
-			}else if(temp.equals("a")){
-				Command a = new UpdateAddress(memberList);
-				a.execute();
-			}else if(temp.equals("e")){
-				Command a = new ExtendMembership(memberList);
-				a.execute();
-				
 			}
 			
 		}
