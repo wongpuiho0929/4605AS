@@ -23,7 +23,7 @@ public abstract class Xmember {
 	}
 	
 	public abstract void setAddress(String address);
-	
+	public abstract void setExpireDate();
 	
 
 
