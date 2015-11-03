@@ -14,7 +14,7 @@ public class Main{
 		
 		while (true) {
 			System.out
-					.println("X Mem Management System\nPlease Enter Command [c|s|a|e|u|r|l|X]\n"
+					.println("\nX Mem Management System\nPlease Enter Command [c|s|a|e|u|r|l|X]\n"
 							+ "c = create membership, s = show membership details, a = update address, e = extend membership, u\n"
 							+ "= undo, r = redo, l = list undo/redo,	X = eXit system");
 			Scanner kb = new Scanner(System.in);

@@ -22,6 +22,14 @@ public abstract class Xmember {
 		
 	}
 	
+	public String toStringOne(){
+		return "ID: "+getid()+"\n"
+					+ "Type: "+getType()+"\n"
+					+ "Name: "+getName()+"\n"
+					+ "Address: "+getAddress()+"\n"
+					+ "Expire date(DD-MM-YYYY): "+getExpireDate();
+	}
+	
 	public abstract void setAddress(String address);
 	
 	

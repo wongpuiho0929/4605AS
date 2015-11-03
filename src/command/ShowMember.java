@@ -22,11 +22,11 @@ public class ShowMember implements Command{
 		Scanner kb = new Scanner(System.in);
 		System.out.println("Enter id(*999 to show all)");
 		String temp = kb.nextLine();
-		System.out.println("Member information");
-		System.out.printf("%12s %-14s %-10s %-15s %s","Expire Date","ID","Type","Name","Address");
+		System.out.println("\nMember information");
 		System.out.println("");
 		if(temp.equals("*999")){
 			for(int i=0;i<memberList.size();i++){
+				System.out.printf("%12s %-14s %-10s %-15s %s","Expire Date","ID","Type","Name","Address\n");
 					if(memberList.get(i) instanceof AJCS.CompanyMember||memberList.get(i) instanceof AJCS.PrimaryMember){
 						member = new MemberAdapter((Member)memberList.get(i));
 					}else if(memberList.get(i) instanceof WLTS.VIP||memberList.get(i) instanceof WLTS.VIP_Family){
@@ -46,8 +46,7 @@ public class ShowMember implements Command{
 				}
 				
 				if(temp.equals(member.getid())){
-					System.out.println(member.toString());
-					break;
+					System.out.println(member.toStringOne());
 				}
 			}
 			
