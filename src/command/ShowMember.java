@@ -25,8 +25,9 @@ public class ShowMember implements Command{
 		System.out.println("\nMember information");
 		System.out.println("");
 		if(temp.equals("*999")){
+			System.out.printf("%12s %-14s %-10s %-15s %s","Expire Date","ID","Type","Name","Address\n");
 			for(int i=0;i<memberList.size();i++){
-				System.out.printf("%12s %-14s %-10s %-15s %s","Expire Date","ID","Type","Name","Address\n");
+				
 					if(memberList.get(i) instanceof AJCS.CompanyMember||memberList.get(i) instanceof AJCS.PrimaryMember){
 						member = new MemberAdapter((Member)memberList.get(i));
 					}else if(memberList.get(i) instanceof WLTS.VIP||memberList.get(i) instanceof WLTS.VIP_Family){
