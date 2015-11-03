@@ -37,4 +37,10 @@ public class MemberAdapter extends Xmember{
 		return date.format(member.getGoodTill());
 	}
 
+	@Override
+	public void setAddress(String address) {
+		member.setPostal(address);
+		
+	}
+
 }

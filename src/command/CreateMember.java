@@ -24,7 +24,7 @@ public class CreateMember implements Command{
 		memberList.add(a);
 		System.out.print("New a record successfully"+"\n");
 	}
-	
+	e
 
 	
 

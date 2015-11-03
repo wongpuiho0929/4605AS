@@ -21,7 +21,6 @@ public class ClientAdapter extends Xmember{
 
 	@Override
 	public String getType() {
-		// TODO Auto-generated method stub
 		return client.getClass().getName();
 	}
 
@@ -38,6 +37,12 @@ public class ClientAdapter extends Xmember{
 	@Override
 	public String getExpireDate() {
 		return date.format(client.getExpiryDate());
+	}
+
+	@Override
+	public void setAddress(String address) {
+		client.setHomeAddress(address);
+		
 	}
 
 }

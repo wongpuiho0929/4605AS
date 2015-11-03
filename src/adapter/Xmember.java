@@ -19,6 +19,10 @@ public abstract class Xmember {
 										+ "Address: " + getAddress() + "\n"
 												+ "Expire date(DD-MM-YYYY): " + getExpireDate();
 	}
+	
+	public abstract void setAddress(String address);
+	
+	
 
 
 }
