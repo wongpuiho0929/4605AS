@@ -4,8 +4,12 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class AdvanceMem {
-	private Member[] members = {new PrimaryMember(),new CompanyMember()};
+	private Member[] members;
 		
+	public AdvanceMem(Member[] members) {
+		this.members = members;
+	}
+
 	public Member createMem(){
 		String[] typeMember ={"Pri","Com"};
 		Scanner kb = new Scanner(System.in);

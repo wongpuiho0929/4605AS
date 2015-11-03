@@ -18,6 +18,7 @@ public class Main extends Thread {
 							+ "= undo, r = redo, l = list undo/redo,	X = eXit system");
 			Scanner kb = new Scanner(System.in);
 			String temp = kb.next();
+			
 			if (temp.equals("c")) {
 				Command a = new CreateMember(memberList);
 				a.execute();
