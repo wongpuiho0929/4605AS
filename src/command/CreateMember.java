@@ -21,16 +21,9 @@ public class CreateMember implements Command{
 		AdvanceMem m1 = new AdvanceMem(members);
 		Member a = m1.createMem();
 		memberList.add(a);
-		for (int i = 0; i < memberList.size(); i++) {
-			System.out.print(memberList.get(i).toString() + "\n"
-					+memberList.get(i).getClass()+"\n");
-		}
+		System.out.print("New a record successfully"+"\n");
 	}
 	
-	public void undo() {
-		memberList.remove(memberList.size()-1);
-		
-	}
 
 	
 

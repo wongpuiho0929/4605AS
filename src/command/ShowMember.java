@@ -30,10 +30,5 @@ public class ShowMember implements Command{
 		}
 		
 	}
-
-	public void undo() {
-		// TODO Auto-generated method stub
-		
-	}
 	
 }
