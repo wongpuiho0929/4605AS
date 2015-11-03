@@ -1,5 +1,6 @@
 package command;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 import AJCS.AdvanceMem;
@@ -9,9 +10,9 @@ import AJCS.PrimaryMember;
 
 public class CreateMember implements Command{
 
-	private Vector<Member> memberList;
+	private ArrayList memberList;
 
-	public CreateMember(Vector<Member> memberList) {
+	public CreateMember(ArrayList memberList) {
 		this.memberList = memberList;
 		}
 

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Vector;
 
@@ -5,11 +6,11 @@ import command.*;
 
 import AJCS.*;
 
-public class Main extends Thread {
+public class Main{
 
 	public static void main(String[] arg) throws Exception {
 		
-		Vector<Member> memberList = new Vector<Member>();
+		ArrayList memberList = new ArrayList(); 
 		
 		while (true) {
 			System.out
@@ -20,10 +21,19 @@ public class Main extends Thread {
 			String temp = kb.next();
 			
 			if (temp.equals("c")) {
-				Command a = new CreateMember(memberList);
-				a.execute();
+				System.out.println("Which Company(AJCS/WLTS)");
+				temp = kb.next();
+				if(temp.equals("AJCS")){
+					Command a = new CreateMember(memberList);
+					a.execute();}
+				else if(temp.equals("WLTS")){
+					Command a = new CreateClient(memberList);
+					a.execute();
+				}
+				
 			}else if(temp.equals("s")){
 				Command a = new ShowMember(memberList);
+				a.execute();
 			}
 			
 		}

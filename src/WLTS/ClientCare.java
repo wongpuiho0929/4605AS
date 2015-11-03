@@ -6,8 +6,13 @@ import java.util.Scanner;
 
 
 public class ClientCare {
-	private Client[] clients = { new VIP(),new VIP_Family()};
+	private Client[] clients ;
 	
+	
+	public ClientCare(Client[] clients) {
+		this.clients = clients;
+	}
+
 	public Client createClient(){
 		String[] typeMember ={"VIP","VIPF"};
 		Scanner kb = new Scanner(System.in);

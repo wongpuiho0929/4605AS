@@ -1,24 +1,29 @@
 package command;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 import AJCS.AdvanceMem;
 import AJCS.Member;
 import WLTS.Client;
 import WLTS.ClientCare;
+import WLTS.VIP;
+import WLTS.VIP_Family;
 
 public class CreateClient implements Command {
 
-	private Vector<Client> clients;
+	private ArrayList clients;
 	
 	
-	public CreateClient(Vector<Client> clients) {
+	public CreateClient(ArrayList clients) {
 		this.clients = clients;
 	}
+	
 
 	@Override
 	public void execute() {
-		ClientCare m1 = new ClientCare();
+		Client [] client = {new VIP(),new VIP_Family()};
+		ClientCare m1 = new ClientCare(client);
 		Client a = m1.createClient();
 		clients.add(a);
 		for (int i = 0; i < clients.size(); i++) {
