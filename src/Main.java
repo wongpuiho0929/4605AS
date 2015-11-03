@@ -28,13 +28,20 @@ public class Main{
 					a.execute();
 				}
 				else if(temp.equals("WLTS")){
-					Command a = new CreateClient(memberList);
+					Command a  = new CreateClient(memberList);
 					a.execute();
 				}
 				
 			}else if(temp.equals("s")){
 				Command a = new ShowMember(memberList);
 				a.execute();
+			}else if(temp.equals("a")){
+				Command a = new UpdateAddress(memberList);
+				a.execute();
+			}else if(temp.equals("e")){
+				Command a = new ExtendMembership(memberList);
+				a.execute();
+				
 			}
 			
 		}
