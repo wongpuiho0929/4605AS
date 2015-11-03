@@ -43,6 +43,6 @@ public class ClientAdapter extends Xmember{
 	public void setAddress(String address) {
 		client.setHomeAddress(address);
 		
-	}e
+	}
 
 }

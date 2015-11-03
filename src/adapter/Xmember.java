@@ -22,7 +22,7 @@ public abstract class Xmember {
 		
 	}
 	
-	public abstract void setAddress(String address);e
+	public abstract void setAddress(String address);
 	
 	
 

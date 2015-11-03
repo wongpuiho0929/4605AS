@@ -41,6 +41,6 @@ public class MemberAdapter extends Xmember{
 	public void setAddress(String address) {
 		member.setPostal(address);
 		
-	}e
+	}
 
 }
