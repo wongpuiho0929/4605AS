@@ -29,7 +29,7 @@ public class CreateClient implements Command {
 		clients.add(a);
 		System.out.print("New a record successfully"+"\n");
 		
-	}e
+	}
 
 	
 

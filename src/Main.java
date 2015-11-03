@@ -35,7 +35,7 @@ public class Main{
 			}else if(temp.equals("s")){
 				Command a = new ShowMember(memberList);
 				a.execute();
-			}e
+			}
 			
 		}
 	}
