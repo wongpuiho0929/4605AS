@@ -22,6 +22,9 @@ public class ShowMember implements Command{
 		Scanner kb = new Scanner(System.in);
 		System.out.println("Enter id(*999 to show all)");
 		String temp = kb.nextLine();
+		System.out.println("Member information");
+		System.out.printf("%12s %-14s %-10s %-15s %s","Expire Date","ID","Type","Name","Address");
+		System.out.println("");
 		if(temp.equals("*999")){
 			for(int i=0;i<memberList.size();i++){
 					if(memberList.get(i) instanceof AJCS.CompanyMember||memberList.get(i) instanceof AJCS.PrimaryMember){
@@ -30,8 +33,8 @@ public class ShowMember implements Command{
 						member = new ClientAdapter((Client)memberList.get(i));
 						
 					}
-				System.out.print(member.toString()+"\n");
-				
+					
+					System.out.println(member.toString());
 			}
 		}else{
 			for(int i=0;i<memberList.size();i++){
@@ -43,7 +46,8 @@ public class ShowMember implements Command{
 				}
 				
 				if(temp.equals(member.getid())){
-					System.out.print(member.toString()+"\n");
+					System.out.println(member.toString());
+					break;
 				}
 			}
 			

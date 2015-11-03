@@ -6,7 +6,7 @@ import AJCS.Member;
 
 public class MemberAdapter extends Xmember{
 	private Member member;
-	private SimpleDateFormat date = new SimpleDateFormat("dd-mm-yyyy");
+	private SimpleDateFormat date = new SimpleDateFormat("dd-MM-yyyy");
 	
 	public MemberAdapter(Member member) {
 		this.member = member;

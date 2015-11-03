@@ -7,7 +7,7 @@ import WLTS.Client;
 public class ClientAdapter extends Xmember{
 
 	private Client client;
-	private SimpleDateFormat date = new SimpleDateFormat("dd-mm-yyyy");
+	private SimpleDateFormat date = new SimpleDateFormat("dd-MM-yyyy");
 	
 	
 	public ClientAdapter(Client client) {

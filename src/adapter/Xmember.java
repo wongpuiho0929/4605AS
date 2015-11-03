@@ -1,6 +1,6 @@
 package adapter;
 
-import java.sql.Date;
+
 import java.text.SimpleDateFormat;
 
 public abstract class Xmember {
@@ -16,9 +16,9 @@ public abstract class Xmember {
 	
 	@Override
 	public String toString() {
-		return "Member information\n"
-				+ "Expire Date  ID			  Type		Name		Address 				\n" 
-				+getExpireDate()+"  "+getid()+"			  "+getType()+"		"+getName()+"		"+getAddress();
+		
+		return String.format("%12s %-14s %-10s %-15s %s",getExpireDate(),getid(),getType(),getName(),getAddress());
+				
 		
 	}
 	
