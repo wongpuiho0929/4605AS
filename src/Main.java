@@ -1,17 +1,17 @@
+
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Vector;
-
 import command.*;
-
-import AJCS.*;
 import Factory.*;
+import adapter.Xmember;
 
 public class Main{
 
+	private static Scanner kb;
+
 	public static void main(String[] arg) throws Exception {
 		
-		ArrayList memberList = new ArrayList(); 
+		ArrayList<Xmember>memberList = new ArrayList<Xmember>(); 
 		String [] factory ={"CreateFactory","ShowMemberFactory",
 				"UpdateAddressFactory","ExtendMembershipFactory"};
 		Factory [] facts = new Factory[factory.length]; 
@@ -30,7 +30,7 @@ public class Main{
 							+ "c = create membership, s = show membership details, a = update address, e = extend membership, \n"
 							+ "u = undo, r = redo, l = list undo/redo,	X = eXit system");
 			
-			Scanner kb = new Scanner(System.in);
+			kb = new Scanner(System.in);
 			String temp = kb.next();
 			int index=-1;
 			for(int i=0;i<CommandIndex.length;i++){

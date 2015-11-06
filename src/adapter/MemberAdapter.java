@@ -44,6 +44,7 @@ public class MemberAdapter extends Xmember{
 		
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void setExpireDate() {
 		Date temp =member.getGoodTill();

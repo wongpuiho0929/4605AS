@@ -46,6 +46,7 @@ public class ClientAdapter extends Xmember{
 		
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void setExpireDate() {
 		Date temp = client.getExpiryDate();

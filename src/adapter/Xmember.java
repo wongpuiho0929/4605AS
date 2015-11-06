@@ -1,11 +1,8 @@
 package adapter;
 
 
-import java.text.SimpleDateFormat;
 
 public abstract class Xmember {
-	
-	private String id,type,name,address,expireDate;
 	
 	
 	public abstract String getid();

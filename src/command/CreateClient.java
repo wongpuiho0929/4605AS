@@ -1,22 +1,20 @@
 package command;
 
 import java.util.ArrayList;
-import java.util.Vector;
-
-import AJCS.AdvanceMem;
-import AJCS.Member;
 import WLTS.Client;
 import WLTS.ClientCare;
 import WLTS.VIP;
 import WLTS.VIP_Family;
+import adapter.ClientAdapter;
+import adapter.Xmember;
 
 public class CreateClient implements Command {
 
-	private ArrayList clients;
+	private ArrayList<Xmember> memberList;
 	
 	
-	public CreateClient(ArrayList clients) {
-		this.clients = clients;
+	public CreateClient(ArrayList<Xmember> memberList) {
+		this.memberList = memberList;
 	}
 	
 
@@ -26,7 +24,8 @@ public class CreateClient implements Command {
 		Client [] client = {new VIP(),new VIP_Family()};
 		ClientCare m1 = new ClientCare(client);
 		Client a = m1.createClient();
-		clients.add(a);
+		Xmember xmem = new ClientAdapter(a);
+		memberList.add(xmem);
 		System.out.print("New a record successfully"+"\n");
 		
 	}

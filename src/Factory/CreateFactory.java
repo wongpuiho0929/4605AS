@@ -27,6 +27,7 @@ public class CreateFactory implements Factory {
 			System.out.println("Enter Company Code (AJCS/WLTS):");
 			String temp = kb.next();
 			int index=-1;
+			temp = temp.toLowerCase();
 			for(int i=0;i<CommandIndex.length;i++){
 				if(temp.equals(CommandIndex[i])){
 					index = i;
