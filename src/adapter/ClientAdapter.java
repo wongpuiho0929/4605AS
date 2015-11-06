@@ -1,6 +1,7 @@
 package adapter;
 
 import java.util.Date;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 import WLTS.Client;
@@ -52,6 +53,31 @@ public class ClientAdapter extends Xmember{
 		Date temp = client.getExpiryDate();
 		temp.setYear(temp.getYear()+1);
 		client.setExpiryDate(temp);
+	}
+
+	@Override
+	public void setid(String id) {
+		client.setCid(Integer.parseInt(id));
+		
+	}
+
+	@Override
+	public void setName(String name) {
+		client.setFullName(name);
+		
+	}
+
+	@Override
+	public void setExpireDate(String eDate) {
+		Date temp=null;
+		try {
+			temp = date.parse(eDate);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		client.setExpiryDate(temp);
+		
 	}
 
 }

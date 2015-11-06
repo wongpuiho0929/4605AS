@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import command.*;
 import Factory.*;
+import Memento.Caretaker;
 import adapter.Xmember;
 
 public class Main{
@@ -16,10 +17,12 @@ public class Main{
 				"UpdateAddressFactory","ExtendMembershipFactory"};
 		Factory [] facts = new Factory[factory.length]; 
 		String [] CommandIndex = {"c","s","a","e","u","l"};
+		Caretaker ct = new Caretaker();
 		try{
 			for(int i=0;i<facts.length;i++){
 				facts[i] = (Factory) Class.forName("Factory."+factory[i]).newInstance();
 				facts[i].setMemberList(memberList);
+				facts[i].setUndoList(ct);
 			}
 		}catch(Exception e){
 			System.out.println(e.getStackTrace());
@@ -41,7 +44,11 @@ public class Main{
 			}
 			if(temp.equals("X")){
 				System.exit(0);
-			}else{
+			}if(temp.equals("u")){
+				ct.undo();
+				System.out.println("undo");
+			}
+			else{
 				Command a = facts[index].Create();
 				a.execute();
 			}

@@ -2,12 +2,15 @@ package Factory;
 
 import java.util.ArrayList;
 
+import Memento.Caretaker;
+import adapter.Xmember;
 import command.Command;
 import command.UpdateAddress;
 
 public class UpdateAddressFactory implements Factory{
 
-	private ArrayList MemberList;
+	private ArrayList<Xmember> MemberList;
+	private Caretaker ct;
 	@Override
 	public Command Create() {
 		
@@ -16,8 +19,14 @@ public class UpdateAddressFactory implements Factory{
 	}
 
 	@Override
-	public void setMemberList(ArrayList MemberList) {
+	public void setMemberList(ArrayList<Xmember> MemberList) {
 		this.MemberList = MemberList;
+		
+	}
+
+	@Override
+	public void setUndoList(Caretaker ct) {
+		this.ct = ct;
 		
 	}
 

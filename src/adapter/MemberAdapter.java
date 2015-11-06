@@ -1,5 +1,6 @@
 package adapter;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -50,6 +51,32 @@ public class MemberAdapter extends Xmember{
 		Date temp =member.getGoodTill();
 		temp.setYear(temp.getYear()+1);
 		member.setGoodTill(temp);
+	}
+
+	@Override
+	public void setid(String id) {
+		member.setId(id);
+		
+	}
+
+
+	@Override
+	public void setName(String name) {
+		member.setName(name);
+		
+	}
+
+	@Override
+	public void setExpireDate(String eDate) {
+		Date temp=null;
+		try {
+			temp = date.parse(eDate);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		member.setGoodTill(temp);
+		
 	}
 
 }

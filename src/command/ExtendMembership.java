@@ -2,15 +2,19 @@ package command;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import Memento.Caretaker;
 import adapter.Xmember;
 
 public class ExtendMembership implements Command {
 	
 	private ArrayList<Xmember> memberList;
 	private Scanner kb;
+	private Caretaker ct;
 	
-	public ExtendMembership(ArrayList<Xmember> memberList) {
+	public ExtendMembership(ArrayList<Xmember> memberList,Caretaker ct) {
 		this.memberList = memberList;
+		this.ct = ct;
 	}
 
 	@Override
@@ -21,6 +25,7 @@ public class ExtendMembership implements Command {
 		for(int i=0;i<memberList.size();i++){
 			Xmember member = memberList.get(i);
 			if(temp.equals(member.getid())){
+				ct.saveMemento(member);
 				member.setExpireDate();
 				break;
 			}

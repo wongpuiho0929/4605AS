@@ -3,11 +3,14 @@ package Factory;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Memento.Caretaker;
+import adapter.Xmember;
 import command.Command;
 
 public class CreateFactory implements Factory {
 
-	private ArrayList MemberList;
+	private ArrayList<Xmember> MemberList;
+	private Caretaker ct;
 	
 	@Override
 	public Command Create() {
@@ -38,8 +41,14 @@ public class CreateFactory implements Factory {
 	}
 
 	@Override
-	public void setMemberList(ArrayList MemberList) {
+	public void setMemberList(ArrayList<Xmember> MemberList) {
 		this.MemberList = MemberList;
+		
+	}
+
+	@Override
+	public void setUndoList(Caretaker ct) {
+		this.ct = ct;
 		
 	}
 
