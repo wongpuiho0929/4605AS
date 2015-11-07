@@ -6,53 +6,57 @@ import Factory.*;
 import Memento.Caretaker;
 import adapter.Xmember;
 
-public class Main{
+public class Main {
 
 	private static Scanner kb;
 
 	public static void main(String[] arg) throws Exception {
-		
-		ArrayList<Xmember>memberList = new ArrayList<Xmember>(); 
-		String [] factory ={"CreateFactory","ShowMemberFactory",
-				"UpdateAddressFactory","ExtendMembershipFactory"};
-		Factory [] facts = new Factory[factory.length]; 
-		String [] CommandIndex = {"c","s","a","e","u","l"};
+
+		ArrayList<Xmember> memberList = new ArrayList<Xmember>();
+		String[] factory = { "CreateFactory", "ShowMemberFactory", "UpdateAddressFactory", "ExtendMembershipFactory" };
+		Factory[] facts = new Factory[factory.length];
+		String[] CommandIndex = { "c", "s", "a", "e", "u", "l" };
 		Caretaker ct = new Caretaker();
-		try{
-			for(int i=0;i<facts.length;i++){
-				facts[i] = (Factory) Class.forName("Factory."+factory[i]).newInstance();
+		try {
+			for (int i = 0; i < facts.length; i++) {
+				facts[i] = (Factory) Class.forName("Factory." + factory[i]).newInstance();
 				facts[i].setMemberList(memberList);
 				facts[i].setUndoList(ct);
 			}
-		}catch(Exception e){
+		} catch (Exception e) {
 			System.out.println(e.getStackTrace());
 		}
 		while (true) {
-			System.out
-					.println("\nX Mem Management System\nPlease Enter Command [c|s|a|e|u|r|l|X]\n"
-							+ "c = create membership, s = show membership details, a = update address, e = extend membership, \n"
-							+ "u = undo, r = redo, l = list undo/redo,	X = eXit system");
-			
+			System.out.println("\nX Mem Management System\nPlease Enter Command [c|s|a|e|u|r|l|X]\n"
+					+ "c = create membership, s = show membership details, a = update address, e = extend membership, \n"
+					+ "u = undo, r = redo, l = list undo/redo,	X = eXit system");
+
 			kb = new Scanner(System.in);
 			String temp = kb.next();
-			int index=-1;
-			for(int i=0;i<CommandIndex.length;i++){
-				if(temp.equals(CommandIndex[i])){
+			int index = -1;
+			for (int i = 0; i < CommandIndex.length; i++) {
+				if (temp.equals(CommandIndex[i])) {
 					index = i;
 				}
-				
+
 			}
-			if(temp.equals("X")){
+			if (temp.equals("X")) {
 				System.exit(0);
-			}if(temp.equals("u")){
+			} else if (temp.equals("u")) {
 				ct.undo();
 				System.out.println("undo");
+			} else if (temp.equals("r")) {
+				ct.redo();
+				System.out.println("redo");
+			} else {
+				try {
+					Command a = facts[index].Create();
+					a.execute();
+				} catch (ArrayIndexOutOfBoundsException ex) {
+					System.out.println("Error Input:");
+				} 
 			}
-			else{
-				Command a = facts[index].Create();
-				a.execute();
-			}
-			
+
 		}
 	}
 

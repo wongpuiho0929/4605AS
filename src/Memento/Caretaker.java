@@ -6,9 +6,11 @@ import adapter.Xmember;
 
 public class Caretaker {
 	private Stack<Memento> undoList;
+	private Stack<Memento> redoList;
 	
 	public Caretaker(){
 		undoList = new Stack<Memento>();
+		redoList = new Stack<Memento>();
 		
 	}
 	
@@ -24,7 +26,14 @@ public class Caretaker {
 	}
 	
 	public void undo(){
-		undoList.pop().restore();
+		redoList.push(undoList.pop());
+		redoList.lastElement().restore();
+		
+	}
+	
+	public void redo(){
+		undoList.push(redoList.pop());
+		undoList.lastElement().reRestore();
 		
 	}
 		
