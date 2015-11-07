@@ -10,4 +10,5 @@ public interface Factory {
 	public Command Create();
 	public void setMemberList(ArrayList<Xmember> MemberList);
 	public void setUndoList(Caretaker ct);
+	public ArrayList<Xmember> getMemberList();
 }

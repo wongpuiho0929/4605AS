@@ -3,6 +3,7 @@ package Factory;
 import java.util.ArrayList;
 
 import Memento.Caretaker;
+import adapter.Xmember;
 import command.Command;
 import command.ShowMember;
 
@@ -26,6 +27,11 @@ public class ShowMemberFactory implements Factory{
 	public void setUndoList(Caretaker ct) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public ArrayList<Xmember> getMemberList() {
+		return MemberList;
 	}
 
 }

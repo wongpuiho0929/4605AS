@@ -14,7 +14,7 @@ public class UpdateAddressFactory implements Factory{
 	@Override
 	public Command Create() {
 		
-		Command a = new UpdateAddress(MemberList);
+		Command a = new UpdateAddress(MemberList,ct);
 		return a;
 	}
 
@@ -28,6 +28,11 @@ public class UpdateAddressFactory implements Factory{
 	public void setUndoList(Caretaker ct) {
 		this.ct = ct;
 		
+	}
+
+	@Override
+	public ArrayList<Xmember> getMemberList() {
+		return MemberList;
 	}
 
 }

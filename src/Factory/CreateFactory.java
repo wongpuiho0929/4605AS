@@ -21,6 +21,7 @@ public class CreateFactory implements Factory {
 			for(int i=0;i<Xfacts.length;i++){
 				Xfacts[i] = (CreateXMemberFactory) Class.forName("Factory."+Xfactory[i]).newInstance();
 				Xfacts[i].setMemberList(MemberList);
+				Xfacts[i].setUndoList(ct);
 			
 			}
 		}catch(Exception c){
@@ -50,6 +51,11 @@ public class CreateFactory implements Factory {
 	public void setUndoList(Caretaker ct) {
 		this.ct = ct;
 		
+	}
+
+	@Override
+	public ArrayList<Xmember> getMemberList() {
+		return MemberList;
 	}
 
 }

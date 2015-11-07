@@ -2,16 +2,20 @@ package command;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import Memento.Caretaker;
 import adapter.Xmember;
 
 public class UpdateAddress implements Command{
 
 	private ArrayList<Xmember> memberList;
 	private Scanner kb;
+	private Caretaker ct;
 	
 	
-	public UpdateAddress(ArrayList<Xmember> memberList) {
+	public UpdateAddress(ArrayList<Xmember> memberList,Caretaker ct) {
 		this.memberList = memberList;
+		this.ct = ct;
 	}
 
 
@@ -25,6 +29,7 @@ public class UpdateAddress implements Command{
 			if(temp.equals(member.getid())){
 				System.out.println("Enter address:");
 				String address = kb.nextLine(); 
+				ct.saveMemento(member);
 				member.setAddress(address);
 				System.out.println("Member address updated.");
 				break;

@@ -1,7 +1,7 @@
 package Memento;
 
+import java.util.ArrayList;
 import java.util.Stack;
-
 import adapter.Xmember;
 
 public class Caretaker {
@@ -13,9 +13,14 @@ public class Caretaker {
 	}
 	
 	public void saveMemento(Xmember xmem){
-		Memento mmt = new Memento(xmem);
+		Memento mmt = new DataMemento(xmem);
 		undoList.push(mmt);
 		
+	}
+	
+	public void saveMember(ArrayList<Xmember> memberList){
+		Memento mmt = new MemberMemento(memberList);
+		undoList.push(mmt);
 	}
 	
 	public void undo(){
