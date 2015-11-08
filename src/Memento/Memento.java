@@ -8,6 +8,6 @@ public interface Memento {
 
 	public void restore();
 	public void reRestore();
-
+	public String getId();
 	
 }

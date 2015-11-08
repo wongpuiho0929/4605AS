@@ -8,11 +8,13 @@ import adapter.Xmember;
 public class MemberMemento implements Memento{
 	private ArrayList<Xmember> memberList;
 	private Stack<Xmember> redo;
+	private String id;
 
-	public MemberMemento(ArrayList<Xmember> memberList) {
+	public MemberMemento(ArrayList<Xmember> memberList,String id) {
 		
 		this.memberList = memberList;
 		redo = new Stack<Xmember>();
+		this.id = id;
 	}
 
 	@Override
@@ -26,6 +28,10 @@ public class MemberMemento implements Memento{
 	public void reRestore() {
 		memberList.add(redo.pop());
 		
+	}
+
+	public String getId() {
+		return id;
 	}
 	
 

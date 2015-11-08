@@ -10,10 +10,12 @@ public class DataMemento implements Memento{
 	private Xmember xmem;
 	private String name,address,date;
 	private Stack<DataCopy> redo;
+	private String id;
 	
 	public DataMemento(Xmember xmem){
 		redo = new Stack<DataCopy>();
 		this.xmem = xmem;
+		id = xmem.getid();
 		name = xmem.getName();
 		address = xmem.getAddress();
 		date = xmem.getExpireDate();
@@ -21,7 +23,6 @@ public class DataMemento implements Memento{
 	
 	public void restore(){
 	
-		System.out.println(xmem.toStringOne());
 		DataCopy temp = new DataCopy(xmem.getName(),xmem.getAddress(),xmem.getExpireDate());
 		redo.push(temp);
 		xmem.setName(name);
@@ -37,6 +38,11 @@ public class DataMemento implements Memento{
 		xmem.setExpireDate(temp.getDate());
 		
 		
+	}
+
+	@Override
+	public String getId() {
+		return id;
 	}
 	
 }

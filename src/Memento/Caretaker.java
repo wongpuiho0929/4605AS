@@ -20,8 +20,8 @@ public class Caretaker {
 		
 	}
 	
-	public void saveMember(ArrayList<Xmember> memberList){
-		Memento mmt = new MemberMemento(memberList);
+	public void saveMember(ArrayList<Xmember> memberList ,String id){
+		Memento mmt = new MemberMemento(memberList,id);
 		undoList.push(mmt);
 	}
 	
@@ -35,6 +35,14 @@ public class Caretaker {
 		undoList.push(redoList.pop());
 		undoList.lastElement().reRestore();
 		
+	}
+
+	public Stack<Memento> getUndoList() {
+		return undoList;
+	}
+
+	public Stack<Memento> getRedoList() {
+		return redoList;
 	}
 	
 
