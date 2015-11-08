@@ -13,7 +13,7 @@ public class Main {
 	public static void main(String[] arg) throws Exception {
 
 		ArrayList<Xmember> memberList = new ArrayList<Xmember>();
-		String[] factory = { "CreateFactory", "ShowMemberFactory", "UpdateAddressFactory", "ExtendMembershipFactory","UndoFactory","RedoFactory"};
+		String[] factory = { "CreateFactory", "ShowMemberFactory", "UpdateAddressFactory", "ExtendMembershipFactory","UndoFactory","RedoFactory","ListFactory"};
 		Factory[] facts = new Factory[factory.length];
 		String[] CommandIndex = { "c", "s", "a", "e", "u", "r","l" };
 		Caretaker ct = new Caretaker();

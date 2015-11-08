@@ -27,5 +27,7 @@ public class MemberMemento implements Memento{
 		memberList.add(redo.pop());
 		
 	}
+	
+
 
 }

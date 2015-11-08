@@ -1,6 +1,7 @@
 package Memento;
 
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 import adapter.Xmember;
@@ -37,4 +38,5 @@ public class DataMemento implements Memento{
 		
 		
 	}
+	
 }
