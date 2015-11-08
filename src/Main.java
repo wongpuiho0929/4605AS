@@ -49,12 +49,10 @@ public class Main {
 				ct.redo();
 				System.out.println("redo");
 			} else {
-				try {
+				
 					Command a = facts[index].Create();
 					a.execute();
-				} catch (ArrayIndexOutOfBoundsException ex) {
-					System.out.println("Error Input:");
-				} 
+				
 			}
 
 		}
