@@ -5,33 +5,33 @@ import java.util.ArrayList;
 import Memento.Caretaker;
 import adapter.Xmember;
 import command.Command;
-import command.ExtendMembership;
+import command.UndoCommand;
 
-public class ExtendMembershipFactory implements Factory{
+public class UndoFactory implements Factory{
 
-	private ArrayList<Xmember> MemberList;
+	private ArrayList<Xmember> memberList;
 	private Caretaker ct;
+	
 	@Override
 	public Command Create() {
-		Command a = new ExtendMembership(MemberList,ct);
+		Command a = new UndoCommand(ct);
 		return a;
 	}
 
 	@Override
 	public void setMemberList(ArrayList<Xmember> MemberList) {
-		this.MemberList = MemberList;
+		memberList = MemberList;
 		
 	}
 
 	@Override
 	public void setUndoList(Caretaker ct) {
 		this.ct =ct;
-		
 	}
 
 	@Override
 	public ArrayList<Xmember> getMemberList() {
-		return MemberList;
+		return memberList;
 	}
-
+	
 }

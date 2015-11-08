@@ -13,9 +13,9 @@ public class Main {
 	public static void main(String[] arg) throws Exception {
 
 		ArrayList<Xmember> memberList = new ArrayList<Xmember>();
-		String[] factory = { "CreateFactory", "ShowMemberFactory", "UpdateAddressFactory", "ExtendMembershipFactory" };
+		String[] factory = { "CreateFactory", "ShowMemberFactory", "UpdateAddressFactory", "ExtendMembershipFactory","UndoFactory","RedoFactory"};
 		Factory[] facts = new Factory[factory.length];
-		String[] CommandIndex = { "c", "s", "a", "e", "u", "l" };
+		String[] CommandIndex = { "c", "s", "a", "e", "u", "r","l" };
 		Caretaker ct = new Caretaker();
 		try {
 			for (int i = 0; i < facts.length; i++) {
@@ -42,14 +42,7 @@ public class Main {
 			}
 			if (temp.equals("X")) {
 				System.exit(0);
-			} else if (temp.equals("u")) {
-				ct.undo();
-				System.out.println("undo");
-			} else if (temp.equals("r")) {
-				ct.redo();
-				System.out.println("redo");
 			} else {
-				
 					Command a = facts[index].Create();
 					a.execute();
 				
