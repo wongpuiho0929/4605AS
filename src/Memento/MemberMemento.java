@@ -8,13 +8,14 @@ import adapter.Xmember;
 public class MemberMemento implements Memento{
 	private ArrayList<Xmember> memberList;
 	private Stack<Xmember> redo;
-	private String id;
-
-	public MemberMemento(ArrayList<Xmember> memberList,String id) {
+	private String id,command;
+	
+	public MemberMemento(ArrayList<Xmember> memberList,String id,String command) {
 		
 		this.memberList = memberList;
 		redo = new Stack<Xmember>();
 		this.id = id;
+		this.command = command;
 	}
 
 	@Override
@@ -31,7 +32,7 @@ public class MemberMemento implements Memento{
 	}
 
 	public String getId() {
-		return id;
+		return command+id;
 	}
 	
 

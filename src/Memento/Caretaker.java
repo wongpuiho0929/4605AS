@@ -14,14 +14,14 @@ public class Caretaker {
 		
 	}
 	
-	public void saveMemento(Xmember xmem){
-		Memento mmt = new DataMemento(xmem);
+	public void saveMemento(Xmember xmem,String command){
+		Memento mmt = new DataMemento(xmem,command);
 		undoList.push(mmt);
 		
 	}
 	
-	public void saveMember(ArrayList<Xmember> memberList ,String id){
-		Memento mmt = new MemberMemento(memberList,id);
+	public void saveMember(ArrayList<Xmember> memberList ,String id,String command){
+		Memento mmt = new MemberMemento(memberList,id,command);
 		undoList.push(mmt);
 	}
 	

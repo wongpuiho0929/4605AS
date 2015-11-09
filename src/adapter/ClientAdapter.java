@@ -23,7 +23,8 @@ public class ClientAdapter extends Xmember{
 
 	@Override
 	public String getType() {
-		return client.getClass().getName();
+		String s = client.getClass().getName(); 
+		return s.substring(s.indexOf(".")+1);
 	}
 
 	@Override

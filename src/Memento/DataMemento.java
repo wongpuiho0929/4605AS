@@ -10,11 +10,12 @@ public class DataMemento implements Memento{
 	private Xmember xmem;
 	private String name,address,date;
 	private Stack<DataCopy> redo;
-	private String id;
+	private String id,command;
 	
-	public DataMemento(Xmember xmem){
+	public DataMemento(Xmember xmem,String command){
 		redo = new Stack<DataCopy>();
 		this.xmem = xmem;
+		this.command = command;
 		id = xmem.getid();
 		name = xmem.getName();
 		address = xmem.getAddress();
@@ -42,7 +43,7 @@ public class DataMemento implements Memento{
 
 	@Override
 	public String getId() {
-		return id;
+		return command+id;
 	}
 	
 }

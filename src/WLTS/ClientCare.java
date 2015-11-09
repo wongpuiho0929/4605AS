@@ -27,7 +27,7 @@ public class ClientCare {
 				} catch (ArrayIndexOutOfBoundsException ex) {
 					System.out.println("Not MATCH");
 				}
-				if (eachStatement.length == 4) {
+				if (eachStatement.length == 4 && typeMemberIndex!=-1) {
 					Client a = clients[typeMemberIndex];
 					a.setCid(Integer.parseInt(eachStatement[0]));
 					a.setFullName(eachStatement[2]);

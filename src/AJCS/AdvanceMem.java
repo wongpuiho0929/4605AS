@@ -27,7 +27,7 @@ public class AdvanceMem {
 				} catch (ArrayIndexOutOfBoundsException ex) {
 					System.out.println("Not MATCH");
 				}
-				if (eachStatement.length == 4) {
+				if (eachStatement.length == 4 && typeMemberIndex!=-1) {
 					Member a = members[typeMemberIndex];
 					a.setId(eachStatement[0]);
 					a.setName(eachStatement[2]);

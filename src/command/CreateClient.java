@@ -30,7 +30,7 @@ public class CreateClient implements Command {
 		ClientCare m1 = new ClientCare(client);
 		Client a = m1.createClient();
 		Xmember xmem = new ClientAdapter(a);
-		ct.saveMember(memberList,xmem.getid());
+		ct.saveMember(memberList,xmem.getid(),"Create ");
 		memberList.add(xmem);
 		System.out.print("New a record successfully"+"\n");
 		

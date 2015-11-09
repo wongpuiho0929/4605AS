@@ -21,7 +21,9 @@ public class MemberAdapter extends Xmember{
 
 	@Override
 	public String getType() {
-		return member.getClass().getName();
+		String s = member.getClass().getName();
+		s = s.substring(s.indexOf(".")+1);
+		return s;
 	}
 
 	@Override
