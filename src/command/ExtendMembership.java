@@ -26,7 +26,7 @@ public class ExtendMembership implements Command {
 		for (int i = 0; i < memberList.size(); i++) {
 			Xmember member = memberList.get(i);
 			if (temp.equals(member.getid())) {
-				ct.saveMemento(member,"Extend ");
+				ct.saveMemento(member,"Extend Membership ");
 				member.setExpireDate();
 				found = true;
 				System.out.println("\nMembership extended:");

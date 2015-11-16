@@ -28,7 +28,7 @@ public class UpdateAddress implements Command {
 			if (temp.equals(member.getid())) {
 				System.out.println("Enter address:");
 				String address = kb.nextLine();
-				ct.saveMemento(member,"Update ");
+				ct.saveMemento(member,"Update address ");
 				member.setAddress(address);
 				found = true;
 				System.out.println("Member address updated.");

@@ -21,7 +21,6 @@ public class RedoCommand implements Command {
 			ct.redo();
 			System.out.println("redo");
 		}else{
-			
 			System.out.println("Cannot Redo");
 		}
 

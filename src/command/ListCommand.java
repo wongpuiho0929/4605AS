@@ -17,14 +17,14 @@ public class ListCommand implements Command {
 	public void execute() {
 		Stack<Memento> undo = ct.getUndoList();
 		Stack<Memento> redo = ct.getRedoList();
-		System.out.println("Undo List");
+		System.out.println("Undo List:");
 		if(undo.size()==0){
 			System.out.println("Empty");
 		}
 		for(int i=0;i<undo.size();i++){
 			System.out.println(undo.get(i).getId());
 		}
-		System.out.println("\nRedo List");
+		System.out.println("\nRedo List:");
 		if(redo.size()==0){
 			System.out.println("Empty");
 		}
