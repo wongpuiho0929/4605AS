@@ -28,12 +28,15 @@ public class CreateClient implements Command {
 		System.out.println("Enter id;type;name;address:");
 		Client [] client = {new VIP(),new VIP_Family()};
 		ClientCare m1 = new ClientCare(client);
+		try{
 		Client a = m1.createClient();
 		Xmember xmem = new ClientAdapter(a);
 		ct.saveMember(memberList,xmem.getid(),"Create ");
 		memberList.add(xmem);
-		System.out.print("New a record successfully"+"\n");
-		
+		System.out.println("New member record created.");
+		}catch(Exception ex){
+			System.out.println("Please try again");
+		}
 	}
 
 	

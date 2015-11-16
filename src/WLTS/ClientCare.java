@@ -14,7 +14,8 @@ public class ClientCare {
 
 	public Client createClient() {
 		Scanner kb = new Scanner(System.in);
-		while (true) {
+		boolean loop=true;
+		while (loop) {
 			String statement = kb.nextLine();
 			String[] eachStatement = statement.split(";");
 
@@ -43,13 +44,14 @@ public class ClientCare {
 					}
 				} else {
 					System.out.println("Please check the Input Data");
-					System.out.println("Enter id;type;name;address:");
+					loop =false;
 				}
 			} else {
 				System.out.println("Please Input data");
 				System.out.println("Enter id;type;name;address:");
 			}
 		}
+		return null;
 
 	}
 

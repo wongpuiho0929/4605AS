@@ -23,11 +23,16 @@ public class CreateMember implements Command{
 		System.out.println("Enter id;type;name;address:");
 		Member [] members={new PrimaryMember(),new CompanyMember()};
 		AdvanceMem m1 = new AdvanceMem(members);
+		try{
 		Member a = m1.createMem();
 		Xmember xmem = new MemberAdapter(a);
 		ct.saveMember(memberList,xmem.getid(),"Create ");
 		memberList.add(xmem);
-		System.out.print("New a record successfully"+"\n");
+		System.out.println("New member record created.");}
+		catch(Exception ex){
+			System.out.println("Please try again");
+		}
+		
 	}
 	
 

@@ -14,7 +14,8 @@ public class AdvanceMem {
 
 	public Member createMem() {
 		Scanner kb = new Scanner(System.in);
-		while (true) {
+		boolean loop=true;
+		while (loop) {
 			String statement = kb.nextLine();
 			String[] eachStatement = statement.split(";");
 			
@@ -41,16 +42,18 @@ public class AdvanceMem {
 					return a;}
 					else{
 						System.out.println("Wrong ID");
+						loop=false;
 					}
 				} else {
 					System.out.println("Please check the Input Data");
-					System.out.println("Enter id;type;name;address:");
-					continue;
+					
+					loop=false;
 				}
 			} else {
 				System.out.println("Please Input data");
 			}
 		}
+		return null;
 	}
 
 	public Member searchMem(String id) {
