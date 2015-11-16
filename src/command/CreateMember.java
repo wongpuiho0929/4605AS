@@ -25,7 +25,7 @@ public class CreateMember implements Command{
 		AdvanceMem m1 = new AdvanceMem(members);
 		Member a = m1.createMem();
 		Xmember xmem = new MemberAdapter(a);
-		ct.saveMember(memberList,xmem.getid(),"Crate ");
+		ct.saveMember(memberList,xmem.getid(),"Create ");
 		memberList.add(xmem);
 		System.out.print("New a record successfully"+"\n");
 	}

@@ -20,12 +20,12 @@ public abstract class Xmember {
 	@Override
 	public String toString() {
 		
-		return String.format("%12s %-14s %-10s %-15s %s",getExpireDate(),getid(),getType(),getName(),getAddress());
+		return String.format("%-12s %-14s %-20s %-15s %s",getExpireDate(),getid(),getType(),getName(),getAddress());
 				
 		
 	}
 	
-	public String toStringOne(){
+	public String toStringShowAll(){
 		return "ID: "+getid()+"\n"
 					+ "Type: "+getType()+"\n"
 					+ "Name: "+getName()+"\n"
@@ -33,7 +33,9 @@ public abstract class Xmember {
 					+ "Expire date(DD-MM-YYYY): "+getExpireDate();
 	}
 	
-
+	public String toStringExtend(){
+		return getExpireDate()+", "+getid()+", "+getType()+", "+getAddress();
+	}
 	
 
 

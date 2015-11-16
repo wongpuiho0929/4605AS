@@ -20,7 +20,7 @@ public class ExtendMembership implements Command {
 
 	@Override
 	public void execute() {
-		System.out.print("Enter id");
+		System.out.println("Enter id");
 		kb = new Scanner(System.in);
 		String temp = kb.nextLine();
 		for (int i = 0; i < memberList.size(); i++) {
@@ -29,6 +29,8 @@ public class ExtendMembership implements Command {
 				ct.saveMemento(member,"Extend ");
 				member.setExpireDate();
 				found = true;
+				System.out.println("\nMembership extended:");
+				System.out.println(member.toStringExtend()+"\n");
 				break;
 			}
 		}

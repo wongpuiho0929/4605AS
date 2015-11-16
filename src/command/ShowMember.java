@@ -21,7 +21,7 @@ public class ShowMember implements Command{
 		System.out.println("\nMember information");
 		System.out.println("");
 		if(temp.equals("*999")){
-			System.out.printf("%12s %-14s %-10s %-15s %s","Expire Date","ID","Type","Name","Address\n");
+			System.out.printf("%-12s %-14s %-20s %-15s %s","Expire Date","ID","Type","Name","Address\n");
 			for(int i=0;i<memberList.size();i++){
 				Xmember member = memberList.get(i);
 				System.out.println(member.toString());
@@ -30,7 +30,7 @@ public class ShowMember implements Command{
 			for(int i=0;i<memberList.size();i++){
 				Xmember member = memberList.get(i);
 				if(temp.equals(member.getid())){
-					System.out.println(member.toStringOne());
+					System.out.println(member.toStringShowAll());
 				}
 			}
 			

@@ -41,6 +41,7 @@ public class Main {
 
 			}
 			if (temp.equals("X")) {
+				System.out.println("Leaving System...");
 				System.exit(0);
 			} else {
 					Command a = facts[index].Create();
