@@ -14,8 +14,12 @@ public class UndoCommand implements Command{
 
 	@Override
 	public void execute() {
+		if(!ct.getUndoList().isEmpty()){
 		ct.undo();
-		System.out.println("undo");
+		System.out.println("undo");}
+		else{
+			System.out.println("Cannot Undo");
+		}
 	}
 
 }
