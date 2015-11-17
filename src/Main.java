@@ -13,9 +13,10 @@ public class Main {
 	public static void main(String[] arg) throws Exception {
 
 		ArrayList<Xmember> memberList = new ArrayList<Xmember>();
-		String[] factory = { "CreateFactory", "ShowMemberFactory", "UpdateAddressFactory", "ExtendMembershipFactory","UndoFactory","RedoFactory","ListFactory"};
+		String[] factory = { "CreateFactory", "ShowMemberFactory", "UpdateAddressFactory", "ExtendMembershipFactory",
+				"UndoFactory", "RedoFactory", "ListFactory" };
 		Factory[] facts = new Factory[factory.length];
-		String[] CommandIndex = { "c", "s", "a", "e", "u", "r","l" };
+		String[] CommandIndex = { "c", "s", "a", "e", "u", "r", "l" };
 		Caretaker ct = new Caretaker();
 		try {
 			for (int i = 0; i < facts.length; i++) {
@@ -35,18 +36,20 @@ public class Main {
 			String temp = kb.next();
 			int index = -1;
 			for (int i = 0; i < CommandIndex.length; i++) {
-				if (temp.equals(CommandIndex[i])) {
+				if (temp.toLowerCase().equals(CommandIndex[i])) {
 					index = i;
 				}
 
 			}
-			if (temp.equals("X")) {
+			if (temp.equals("x")) {
 				System.out.println("Leaving System...");
 				System.exit(0);
+			}
+			if (index != -1) {
+				Command a = facts[index].Create();
+				a.execute();
 			} else {
-					Command a = facts[index].Create();
-					a.execute();
-				
+				System.out.println("Error command with your input:" + temp);
 			}
 
 		}
