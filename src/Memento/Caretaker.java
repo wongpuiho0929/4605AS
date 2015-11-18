@@ -11,13 +11,11 @@ public class Caretaker {
 	public Caretaker(){
 		undoList = new Stack<Memento>();
 		redoList = new Stack<Memento>();
-		
 	}
 	
 	public void saveMemento(Xmember xmem,String command){
 		Memento mmt = new DataMemento(xmem,command);
 		undoList.push(mmt);
-		
 	}
 	
 	public void saveMember(ArrayList<Xmember> memberList ,String id,String command){
@@ -28,13 +26,11 @@ public class Caretaker {
 	public void undo(){
 		redoList.push(undoList.pop());
 		redoList.lastElement().restore();
-		
 	}
 	
 	public void redo(){
 		undoList.push(redoList.pop());
 		undoList.lastElement().reRestore();
-		
 	}
 
 	public Stack<Memento> getUndoList() {
@@ -43,8 +39,5 @@ public class Caretaker {
 
 	public Stack<Memento> getRedoList() {
 		return redoList;
-	}
-	
-
-		
+	}		
 }

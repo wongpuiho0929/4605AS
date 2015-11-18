@@ -10,14 +10,10 @@ public class MemberAdapter extends Xmember{
 	private Member member;
 	private SimpleDateFormat date = new SimpleDateFormat("dd-MM-yyyy");
 	
-	public MemberAdapter(Member member) {
-		this.member = member;
-	}
+	public MemberAdapter(Member member) { this.member = member; }
 
 	@Override
-	public String getid() {
-		return member.getId();
-	}
+	public String getid() {	return member.getId(); }
 
 	@Override
 	public String getType() {
@@ -27,25 +23,16 @@ public class MemberAdapter extends Xmember{
 	}
 
 	@Override
-	public String getName() {
-		return member.getName();
-	}
+	public String getName() { return member.getName(); }
 
 	@Override
-	public String getAddress() {
-		return member.getPostal();
-	}
+	public String getAddress() { return member.getPostal();	}
 
 	@Override
-	public String getExpireDate() {
-		return date.format(member.getGoodTill());
-	}
+	public String getExpireDate() {	return date.format(member.getGoodTill()); }
 
 	@Override
-	public void setAddress(String address) {
-		member.setPostal(address);
-		
-	}
+	public void setAddress(String address) { member.setPostal(address);	}
 
 	@SuppressWarnings("deprecation")
 	@Override
@@ -56,17 +43,11 @@ public class MemberAdapter extends Xmember{
 	}
 
 	@Override
-	public void setid(String id) {
-		member.setId(id);
-		
-	}
+	public void setid(String id) { member.setId(id); }
 
 
 	@Override
-	public void setName(String name) {
-		member.setName(name);
-		
-	}
+	public void setName(String name) { member.setName(name); }
 
 	@Override
 	public void setExpireDate(String eDate) {
@@ -74,11 +55,8 @@ public class MemberAdapter extends Xmember{
 		try {
 			temp = date.parse(eDate);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		member.setGoodTill(temp);
-		
 	}
-
 }

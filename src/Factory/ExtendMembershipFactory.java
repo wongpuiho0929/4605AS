@@ -20,18 +20,15 @@ public class ExtendMembershipFactory implements Factory{
 	@Override
 	public void setMemberList(ArrayList<Xmember> MemberList) {
 		this.MemberList = MemberList;
-		
 	}
 
 	@Override
 	public void setUndoList(Caretaker ct) {
 		this.ct =ct;
-		
 	}
 
 	@Override
 	public ArrayList<Xmember> getMemberList() {
 		return MemberList;
 	}
-
 }

@@ -18,21 +18,15 @@ public class ListFactory implements Factory{
 	}
 
 	@Override
-	public void setMemberList(ArrayList<Xmember> MemberList) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void setMemberList(ArrayList<Xmember> MemberList) {	}
 
 	@Override
 	public void setUndoList(Caretaker ct) {
-	this.ct = ct;
-		
+		this.ct = ct;
 	}
 
 	@Override
 	public ArrayList<Xmember> getMemberList() {
-		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

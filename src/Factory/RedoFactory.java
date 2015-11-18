@@ -21,18 +21,15 @@ public class RedoFactory implements Factory{
 	@Override
 	public void setMemberList(ArrayList<Xmember> MemberList) {
 		this.memberList =MemberList;
-		
 	}
 
 	@Override
 	public void setUndoList(Caretaker ct) {
 		this.ct = ct;
-		
 	}
 
 	@Override
 	public ArrayList<Xmember> getMemberList() {
 		return memberList;
 	}
-
 }

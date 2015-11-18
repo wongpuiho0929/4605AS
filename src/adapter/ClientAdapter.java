@@ -11,7 +11,6 @@ public class ClientAdapter extends Xmember{
 	private Client client;
 	private SimpleDateFormat date = new SimpleDateFormat("dd-MM-yyyy");
 	
-	
 	public ClientAdapter(Client client) {
 		this.client = client;
 	}
@@ -28,25 +27,16 @@ public class ClientAdapter extends Xmember{
 	}
 
 	@Override
-	public String getName() {
-		return client.getFullName();
-	}
+	public String getName() { return client.getFullName(); }
 
 	@Override
-	public String getAddress() {
-		return client.getHomeAddress();
-	}
+	public String getAddress() { return client.getHomeAddress(); }
 
 	@Override
-	public String getExpireDate() {
-		return date.format(client.getExpiryDate());
-	}
+	public String getExpireDate() {	return date.format(client.getExpiryDate()); }
 
 	@Override
-	public void setAddress(String address) {
-		client.setHomeAddress(address);
-		
-	}
+	public void setAddress(String address) { client.setHomeAddress(address); }
 
 	@SuppressWarnings("deprecation")
 	@Override
@@ -57,16 +47,10 @@ public class ClientAdapter extends Xmember{
 	}
 
 	@Override
-	public void setid(String id) {
-		client.setCid(Integer.parseInt(id));
-		
-	}
+	public void setid(String id) { client.setCid(Integer.parseInt(id)); }
 
 	@Override
-	public void setName(String name) {
-		client.setFullName(name);
-		
-	}
+	public void setName(String name) { client.setFullName(name); }
 
 	@Override
 	public void setExpireDate(String eDate) {
@@ -74,11 +58,9 @@ public class ClientAdapter extends Xmember{
 		try {
 			temp = date.parse(eDate);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		client.setExpiryDate(temp);
-		
 	}
 
 }

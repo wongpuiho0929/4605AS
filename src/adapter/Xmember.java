@@ -1,7 +1,5 @@
 package adapter;
 
-
-
 public abstract class Xmember {
 	
 	String id,type,name,address,expireDate;
@@ -19,10 +17,7 @@ public abstract class Xmember {
 	
 	@Override
 	public String toString() {
-		
 		return String.format("%-12s %-14s %-20s %-15s %s",getExpireDate(),getid(),getType(),getName(),getAddress());
-				
-		
 	}
 	
 	public String toStringShowAll(){
@@ -36,7 +31,4 @@ public abstract class Xmember {
 	public String toStringExtend(){
 		return getExpireDate()+", "+getid()+", "+getType()+", "+getAddress();
 	}
-	
-
-
 }

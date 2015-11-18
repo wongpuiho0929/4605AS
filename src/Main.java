@@ -39,20 +39,17 @@ public class Main {
 				if (temp.toLowerCase().equals(CommandIndex[i])) {
 					index = i;
 				}
-
 			}
-			if (temp.equals("x")) {
-				System.out.println("Leaving System...");
-				System.exit(0);
-			}
-			if (index != -1) {
-				Command a = facts[index].Create();
-				a.execute();
-			} else {
-				System.out.println("Error command with your input:" + temp);
-			}
-
+			if (temp.equals("X")||temp.equals("x")) {
+					System.out.println("Leaving System...");
+					System.exit(0);
+				}
+				if (index != -1) {
+					Command a = facts[index].Create();
+					a.execute();
+				} else {
+					System.out.println("Error command with your input:" + temp);
+				}
 		}
 	}
-
 }

@@ -27,8 +27,5 @@ public class CreateClientFactory implements CreateXMemberFactory{
 	@Override
 	public void setUndoList(Caretaker ct) {
 		this.ct =ct;
-		
 	}
-
-
 }

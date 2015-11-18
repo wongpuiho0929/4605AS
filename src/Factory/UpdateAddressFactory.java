@@ -13,7 +13,6 @@ public class UpdateAddressFactory implements Factory{
 	private Caretaker ct;
 	@Override
 	public Command Create() {
-		
 		Command a = new UpdateAddress(MemberList,ct);
 		return a;
 	}
@@ -21,18 +20,15 @@ public class UpdateAddressFactory implements Factory{
 	@Override
 	public void setMemberList(ArrayList<Xmember> MemberList) {
 		this.MemberList = MemberList;
-		
 	}
 
 	@Override
 	public void setUndoList(Caretaker ct) {
 		this.ct = ct;
-		
-	}
+	}	
 
 	@Override
 	public ArrayList<Xmember> getMemberList() {
 		return MemberList;
 	}
-
 }

@@ -21,7 +21,6 @@ public class UndoFactory implements Factory{
 	@Override
 	public void setMemberList(ArrayList<Xmember> MemberList) {
 		memberList = MemberList;
-		
 	}
 
 	@Override
@@ -33,5 +32,4 @@ public class UndoFactory implements Factory{
 	public ArrayList<Xmember> getMemberList() {
 		return memberList;
 	}
-	
 }

@@ -39,33 +39,20 @@ public class CreateFactory implements Factory {
 					index = i;
 				}
 			}
-			
 			if (index != -1){
 				Command a = Xfacts[index].Create();
 				return a;
-				}
-			else 
+			}else 
 				System.out.println("Please Enter again");
-
 		}
-
 	}
 
 	@Override
-	public void setMemberList(ArrayList<Xmember> MemberList) {
-		this.MemberList = MemberList;
-
-	}
+	public void setMemberList(ArrayList<Xmember> MemberList) {this.MemberList = MemberList;	}
 
 	@Override
-	public void setUndoList(Caretaker ct) {
-		this.ct = ct;
-
-	}
+	public void setUndoList(Caretaker ct) {	this.ct = ct; }
 
 	@Override
-	public ArrayList<Xmember> getMemberList() {
-		return MemberList;
-	}
-
+	public ArrayList<Xmember> getMemberList() {	return MemberList;	}
 }

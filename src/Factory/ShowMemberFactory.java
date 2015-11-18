@@ -20,18 +20,13 @@ public class ShowMemberFactory implements Factory{
 	@Override
 	public void setMemberList(ArrayList MemberList) {
 		this.MemberList = MemberList;
-		
 	}
 
 	@Override
-	public void setUndoList(Caretaker ct) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void setUndoList(Caretaker ct) {	}
 
 	@Override
 	public ArrayList<Xmember> getMemberList() {
 		return MemberList;
 	}
-
 }

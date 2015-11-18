@@ -21,14 +21,10 @@ public class CreateMemberFactory implements CreateXMemberFactory {
 	@Override
 	public void setMemberList(ArrayList<Xmember> MemberList) {
 		this.MemberList = MemberList;
-		
 	}
 
 	@Override
 	public void setUndoList(Caretaker ct) {
 		this.ct =ct;
-		
 	}
-
-
 }

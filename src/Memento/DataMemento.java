@@ -1,6 +1,5 @@
 package Memento;
 
-
 import java.util.ArrayList;
 import java.util.Stack;
 
@@ -23,7 +22,6 @@ public class DataMemento implements Memento{
 	}
 	
 	public void restore(){
-	
 		DataCopy temp = new DataCopy(xmem.getName(),xmem.getAddress(),xmem.getExpireDate());
 		redo.push(temp);
 		xmem.setName(name);
@@ -37,13 +35,10 @@ public class DataMemento implements Memento{
 		xmem.setName(temp.getName());
 		xmem.setAddress(temp.getAddress());
 		xmem.setExpireDate(temp.getDate());
-		
-		
 	}
 
 	@Override
 	public String getId() {
 		return command+id;
 	}
-	
 }
