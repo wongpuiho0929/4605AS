@@ -22,7 +22,7 @@ public class CreateMember implements Command{
 	public void execute() {
 		System.out.println("Enter id;type;name;address:");
 		Member [] members={new PrimaryMember(),new CompanyMember()};
-		AdvanceMem m1 = new AdvanceMem(members);
+		AdvanceMem m1 = new AdvanceMem(members,memberList);
 		try{
 		Member a = m1.createMem();
 		Xmember xmem = new MemberAdapter(a);

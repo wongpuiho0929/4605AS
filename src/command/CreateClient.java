@@ -27,7 +27,7 @@ public class CreateClient implements Command {
 	public void execute() {
 		System.out.println("Enter id;type;name;address:");
 		Client [] client = {new VIP(),new VIP_Family()};
-		ClientCare m1 = new ClientCare(client);
+		ClientCare m1 = new ClientCare(client,memberList);
 		try{
 		Client a = m1.createClient();
 		Xmember xmem = new ClientAdapter(a);

@@ -1,15 +1,20 @@
 package AJCS;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
+
+import adapter.Xmember;
 
 public class AdvanceMem {
 	private Member[] members;
 	private String[] typeMember = { "Pri", "Com" };
 	private int typeMemberIndex = -1;
+	private ArrayList<Xmember> memberList;
 	
-	public AdvanceMem(Member[] members) {
+	public AdvanceMem(Member[] members,ArrayList<Xmember>memberList) {
 		this.members = members;
+		this.memberList = memberList;
 	}
 
 	public Member createMem() {
@@ -41,7 +46,6 @@ public class AdvanceMem {
 					a.setPostal(eachStatement[3]);
 					return a;}
 					else{
-						System.out.println("Wrong ID");
 						loop=false;
 					}
 				} else {
@@ -90,6 +94,16 @@ public class AdvanceMem {
 			if(total %8==0){
 				chk =true;
 			}
+		}
+		for(int i=0;i<memberList.size();i++){
+			if(memberList.get(i).getid().equals(id)){
+				chk =false;
+				System.out.println("Already have this record");
+				return chk;
+			} 
+		}
+		if(!chk){
+			System.out.println("Wrong ID");
 		}
 		return chk;
 	} 

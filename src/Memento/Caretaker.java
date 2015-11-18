@@ -16,11 +16,13 @@ public class Caretaker {
 	public void saveMemento(Xmember xmem,String command){
 		Memento mmt = new DataMemento(xmem,command);
 		undoList.push(mmt);
+		redoList.clear();
 	}
 	
 	public void saveMember(ArrayList<Xmember> memberList ,String id,String command){
 		Memento mmt = new MemberMemento(memberList,id,command);
 		undoList.push(mmt);
+		redoList.clear();
 	}
 	
 	public void undo(){

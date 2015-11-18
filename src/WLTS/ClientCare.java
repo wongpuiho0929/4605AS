@@ -1,15 +1,20 @@
 package WLTS;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
+
+import adapter.Xmember;
 
 public class ClientCare {
 	private Client[] clients;
 	private int typeMemberIndex = -1;
 	private String[] typeMember = { "VIP", "VIPF" };
-
-	public ClientCare(Client[] clients) {
+	private ArrayList<Xmember> memberList;
+	
+	public ClientCare(Client[] clients,ArrayList<Xmember> memberList) {
 		this.clients = clients;
+		this.memberList = memberList;
 	}
 
 	public Client createClient() {
@@ -95,6 +100,11 @@ public class ClientCare {
 				}
 			}
 
+		}
+		for(int i=0;i<memberList.size();i++){
+			if(memberList.get(i).getid().equals(id)){
+				chk =false;
+			} 
 		}
 		return chk;
 
