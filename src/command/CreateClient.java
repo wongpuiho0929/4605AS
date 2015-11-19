@@ -30,6 +30,7 @@ public class CreateClient implements Command {
 		ClientCare m1 = new ClientCare(client,memberList);
 		try{
 		Client a = m1.createClient();
+		// Client convert to Xmember and store into the memberList, and put the action to the Memento.
 		Xmember xmem = new ClientAdapter(a);
 		ct.saveMember(memberList,xmem.getid(),"Create ");
 		memberList.add(xmem);

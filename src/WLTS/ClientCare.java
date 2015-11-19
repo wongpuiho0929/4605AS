@@ -11,30 +11,29 @@ public class ClientCare {
 	private int typeMemberIndex = -1;
 	private String[] typeMember = { "VIP", "VIPF" };
 	private ArrayList<Xmember> memberList;
-	
-	public ClientCare(Client[] clients,ArrayList<Xmember> memberList) {
+
+	public ClientCare(Client[] clients, ArrayList<Xmember> memberList) {
 		this.clients = clients;
 		this.memberList = memberList;
 	}
 
 	public Client createClient() {
 		Scanner kb = new Scanner(System.in);
-		boolean loop=true;
+		boolean loop = true;
 		while (loop) {
 			String statement = kb.nextLine();
-			String[] eachStatement = statement.split(";");
-
-			if (!statement.isEmpty()) {
-				try {
-					for (int i = 0; i < typeMember.length; i++) {
-						if (eachStatement[1].equals(typeMember[i])) {
-							typeMemberIndex = i;
-						}
+			String[] eachStatement = statement.split(";");// separate the user
+															// input by ";".
+			if (eachStatement.length != 4) {
+				System.out.println("Please Enter like \"id;type;name;address\"");
+			} else {
+				for (int i = 0; i < typeMember.length; i++) {
+					if (eachStatement[1].equals(typeMember[i])) {
+						typeMemberIndex = i;
 					}
-				} catch (ArrayIndexOutOfBoundsException ex) {
-					System.out.println("Not MATCH");
 				}
-				if (eachStatement.length == 4 && typeMemberIndex != -1) {
+				// Find the type in the String [] typeMember.
+				if (typeMemberIndex != -1) {
 					Client a = clients[typeMemberIndex];
 					if (validate(eachStatement[0])) {
 						a.setCid(Integer.parseInt(eachStatement[0]));
@@ -45,15 +44,12 @@ public class ClientCare {
 						a.setHomeAddress(eachStatement[3]);
 						return a;
 					} else {
-						System.out.println("Wrong ID");
+						loop = false;
 					}
 				} else {
-					System.out.println("Please check the Input Data");
-					loop =false;
+					System.out.println("No this type. Please input type like \"VIP\" or \"VIPF\"");
+					loop = false;
 				}
-			} else {
-				System.out.println("Please Input data");
-				System.out.println("Enter id;type;name;address:");
 			}
 		}
 		return null;
@@ -94,17 +90,22 @@ public class ClientCare {
 
 		} else if (typeMemberIndex == 1) {
 
-			if (Integer.parseInt(id.substring(0,3)) == 303) {
+			if (Integer.parseInt(id.substring(0, 3)) == 303) {
 				if (total % 6 == 0) {
 					chk = true;
 				}
 			}
 
 		}
-		for(int i=0;i<memberList.size();i++){
-			if(memberList.get(i).getid().equals(id)){
-				chk =false;
-			} 
+		for (int i = 0; i < memberList.size(); i++) {
+			if (memberList.get(i).getid().equals(id)) {
+				chk = false;
+				System.out.println("Already have this record");
+				return chk;
+			}
+		}
+		if (!chk) {
+			System.out.println("Wrong ID");
 		}
 		return chk;
 

@@ -11,53 +11,50 @@ public class AdvanceMem {
 	private String[] typeMember = { "Pri", "Com" };
 	private int typeMemberIndex = -1;
 	private ArrayList<Xmember> memberList;
-	
-	public AdvanceMem(Member[] members,ArrayList<Xmember>memberList) {
+
+	public AdvanceMem(Member[] members, ArrayList<Xmember> memberList) {
 		this.members = members;
 		this.memberList = memberList;
 	}
 
 	public Member createMem() {
 		Scanner kb = new Scanner(System.in);
-		boolean loop=true;
+		boolean loop = true;
 		while (loop) {
 			String statement = kb.nextLine();
-			String[] eachStatement = statement.split(";");
-			
-			if (!statement.isEmpty()) {
-				try {
-					for (int i = 0; i < typeMember.length; i++) {
-						if (eachStatement[1].equals(typeMember[i])) {
-							typeMemberIndex = i;
-						}
+			String[] eachStatement = statement.split(";"); // separate the user input by ";".									
+			if (eachStatement.length != 4) {
+				System.out.println("Please Enter like \"id;type;name;address\"");
+			} else {
+				// Match the type with the user input.
+				for (int i = 0; i < typeMember.length; i++) {
+					if (eachStatement[1].equals(typeMember[i])) {
+						typeMemberIndex = i;
 					}
-				} catch (ArrayIndexOutOfBoundsException ex) {
-					System.out.println("Not MATCH");
 				}
-				if (eachStatement.length == 4 && typeMemberIndex!=-1) {
+				// Find the type in the String [] typeMember.
+				if (typeMemberIndex != -1) {
 					Member a = members[typeMemberIndex];
-					boolean chk =validate(eachStatement[0]);
-					if(chk){
-					a.setId(eachStatement[0]);
-					a.setName(eachStatement[2]);
-					Date date = new Date();
-					date.setYear(date.getYear() + 1);
-					a.setGoodTill(date);
-					a.setPostal(eachStatement[3]);
-					return a;}
-					else{
-						loop=false;
+					boolean chk = validate(eachStatement[0]);
+					if (chk) {
+						a.setId(eachStatement[0]);
+						a.setName(eachStatement[2]);
+						Date date = new Date();
+						date.setYear(date.getYear() + 1);
+						a.setGoodTill(date);
+						a.setPostal(eachStatement[3]);
+						return a;
+					} else {
+						loop = false;
 					}
 				} else {
-					System.out.println("Please check the Input Data");
-					
-					loop=false;
+					System.out.println("No this type. Please input type like \"Pri\" or \"Com\"");
+					loop = false;
 				}
-			} else {
-				System.out.println("Please Input data");
 			}
 		}
 		return null;
+
 	}
 
 	public Member searchMem(String id) {
@@ -73,38 +70,37 @@ public class AdvanceMem {
 
 	}
 
-	
 	public boolean stillGood(String id) {
 		return false;
 
 	}
-	
-	public boolean validate(String id){
+
+	public boolean validate(String id) {
 		boolean chk = false;
-		char [] temp =id.toCharArray();
-		int total=0;
-		for(int i=0;i<temp.length;i++){
-			total += Integer.parseInt(temp[i]+"");
+		char[] temp = id.toCharArray();
+		int total = 0;
+		for (int i = 0; i < temp.length; i++) {
+			total += Integer.parseInt(temp[i] + "");
 		}
-		if(typeMemberIndex ==0){
-			if(total %3==0){
-				chk =true;
+		if (typeMemberIndex == 0) {
+			if (total % 3 == 0) {
+				chk = true;
 			}
-		}else if (typeMemberIndex == 1){
-			if(total %8==0){
-				chk =true;
+		} else if (typeMemberIndex == 1) {
+			if (total % 8 == 0) {
+				chk = true;
 			}
 		}
-		for(int i=0;i<memberList.size();i++){
-			if(memberList.get(i).getid().equals(id)){
-				chk =false;
+		for (int i = 0; i < memberList.size(); i++) {
+			if (memberList.get(i).getid().equals(id)) {
+				chk = false;
 				System.out.println("Already have this record");
 				return chk;
-			} 
+			}
 		}
-		if(!chk){
+		if (!chk) {
 			System.out.println("Wrong ID");
 		}
 		return chk;
-	} 
+	}
 }

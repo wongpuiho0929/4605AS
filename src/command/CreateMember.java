@@ -25,6 +25,7 @@ public class CreateMember implements Command{
 		AdvanceMem m1 = new AdvanceMem(members,memberList);
 		try{
 		Member a = m1.createMem();
+		// Let Member convert to Xmember and store into the memberList, and put the action to the Memento.
 		Xmember xmem = new MemberAdapter(a);
 		ct.saveMember(memberList,xmem.getid(),"Create ");
 		memberList.add(xmem);

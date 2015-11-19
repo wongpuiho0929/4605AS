@@ -23,10 +23,13 @@ public class ExtendMembership implements Command {
 		System.out.println("Enter id");
 		kb = new Scanner(System.in);
 		String temp = kb.nextLine();
+		//Match the id from the memberList to extend member's membership.
 		for (int i = 0; i < memberList.size(); i++) {
 			Xmember member = memberList.get(i);
 			if (temp.equals(member.getid())) {
+				// when find the correct member,put the action to the Memento.
 				ct.saveMemento(member,"Extend Membership ");
+				// add one more year;
 				member.setExpireDate();
 				found = true;
 				System.out.println("\nMembership extended:");

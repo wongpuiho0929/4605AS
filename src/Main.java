@@ -18,6 +18,7 @@ public class Main {
 		Factory[] facts = new Factory[factory.length];
 		String[] CommandIndex = { "c", "s", "a", "e", "u", "r", "l" };
 		Caretaker ct = new Caretaker();
+		// Create Factory object and set the memberList and Memento to the Factory.
 		try {
 			for (int i = 0; i < facts.length; i++) {
 				facts[i] = (Factory) Class.forName("Factory." + factory[i]).newInstance();
@@ -35,6 +36,7 @@ public class Main {
 			kb = new Scanner(System.in);
 			String temp = kb.next();
 			int index = -1;
+			//check which command is inputed. 
 			for (int i = 0; i < CommandIndex.length; i++) {
 				if (temp.toLowerCase().equals(CommandIndex[i])) {
 					index = i;
